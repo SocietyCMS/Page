@@ -1,0 +1,17 @@
+{
+  "name": "Page",
+  "alias": "page",
+  "description": "Managing pages.",
+  "keywords": [],
+  "version": "0.0.1",
+  "active": 1,
+  "order": 5,
+  "providers": [
+    "Modules\\Page\\Providers\\PageServiceProvider",
+    "Modules\\Page\\Providers\\RouteServiceProvider"
+  ],
+  "aliases": {},
+  "files": [
+    "start.php"
+  ]
+}
