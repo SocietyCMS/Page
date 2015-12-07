@@ -1,4 +1,6 @@
-<?php namespace Modules\Page\Http\Controllers;
+<?php
+
+namespace Modules\Page\Http\Controllers;
 
 use Illuminate\Contracts\Foundation\Application;
 use Modules\Core\Http\Controllers\PublicBaseController;
@@ -24,6 +26,7 @@ class PublicController extends PublicBaseController
 
     /**
      * @param $slug
+     *
      * @return \Illuminate\View\View
      */
     public function uri($slug)
@@ -53,8 +56,10 @@ class PublicController extends PublicBaseController
 
     /**
      * Return the template for the given page
-     * or the default template if none found
+     * or the default template if none found.
+     *
      * @param $page
+     *
      * @return string
      */
     private function getTemplateForPage($page)
@@ -63,7 +68,8 @@ class PublicController extends PublicBaseController
     }
 
     /**
-     * Throw a 404 error page if the given page is not found
+     * Throw a 404 error page if the given page is not found.
+     *
      * @param $page
      */
     private function throw404IfNotFound($page)

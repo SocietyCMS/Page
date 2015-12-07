@@ -1,4 +1,6 @@
-<?php namespace Modules\Page\MenuExtenders;
+<?php
+
+namespace Modules\Page\MenuExtenders;
 
 use Maatwebsite\Sidebar\Group;
 use Maatwebsite\Sidebar\Item;

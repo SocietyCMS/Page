@@ -1,4 +1,6 @@
-<?php namespace Modules\Page\Presenters;
+<?php
+
+namespace Modules\Page\Presenters;
 
 use Carbon\Carbon;
 use Laracasts\Presenter\Presenter;
@@ -6,7 +8,7 @@ use Laracasts\Presenter\Presenter;
 class PagePresenter extends Presenter
 {
     /**
-     * Format created_at
+     * Format created_at.
      *
      * @return string
      */
@@ -19,7 +21,7 @@ class PagePresenter extends Presenter
     }
 
     /**
-     * Format updated_at
+     * Format updated_at.
      *
      * @return string
      */

@@ -1,10 +1,11 @@
-<?php namespace Modules\Page\Http\Requests;
+<?php
+
+namespace Modules\Page\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 class PageRequest extends FormRequest
 {
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -24,8 +25,7 @@ class PageRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'body' => 'required',
+            'body'  => 'required',
         ];
     }
-
 }

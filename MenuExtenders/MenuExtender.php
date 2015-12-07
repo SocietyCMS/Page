@@ -1,4 +1,6 @@
-<?php namespace Modules\Page\MenuExtenders;
+<?php
+
+namespace Modules\Page\MenuExtenders;
 
 use Modules\Core\Contracts\Authentication;
 use Modules\Menu\Repositories\Menu\MenuRepository;
