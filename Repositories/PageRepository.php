@@ -1,18 +1,19 @@
-<?php namespace Modules\Page\Repositories;
+<?php
+
+namespace Modules\Page\Repositories;
 
 use Modules\Core\Repositories\Eloquent\EloquentSlugRepository;
 
 class PageRepository extends EloquentSlugRepository
 {
-
     /**
-     * Specify Model class name
+     * Specify Model class name.
      *
      * @return string
      */
     public function model()
     {
-        return "Modules\\Page\\Entities\\Page";
+        return 'Modules\\Page\\Entities\\Page';
     }
 
     /**
@@ -25,7 +26,8 @@ class PageRepository extends EloquentSlugRepository
 
     /**
      * @param $model
-     * @param  array $data
+     * @param array $data
+     *
      * @return object
      */
     /*   public function update($model, $data)
@@ -40,6 +42,7 @@ class PageRepository extends EloquentSlugRepository
            return $model;
        }
    */
+
     /**
      * @return \Illuminate\Database\Eloquent\Collection
      */
@@ -50,8 +53,5 @@ class PageRepository extends EloquentSlugRepository
         }
 
         return $this->model->where('published', 1)->get();
-
-
     }
-
 }

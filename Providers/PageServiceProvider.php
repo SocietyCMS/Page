@@ -1,11 +1,11 @@
-<?php namespace Modules\Page\Providers;
+<?php
+
+namespace Modules\Page\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Modules\Page\Repositories\Eloquent\EloquentPageRepository;
 
 class PageServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -33,10 +33,10 @@ class PageServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__ . '/../Config/config.php' => config_path('page.php'),
+            __DIR__.'/../Config/config.php' => config_path('page.php'),
         ]);
         $this->mergeConfigFrom(
-            __DIR__ . '/../Config/config.php', 'page'
+            __DIR__.'/../Config/config.php', 'page'
         );
     }
 
@@ -52,7 +52,7 @@ class PageServiceProvider extends ServiceProvider
         if (is_dir($langPath)) {
             $this->loadTranslationsFrom($langPath, 'page');
         } else {
-            $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'page');
+            $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'page');
         }
     }
 
@@ -65,10 +65,10 @@ class PageServiceProvider extends ServiceProvider
     {
         $viewPath = base_path('resources/views/modules/page');
 
-        $sourcePath = __DIR__ . '/../Resources/views';
+        $sourcePath = __DIR__.'/../Resources/views';
 
         $this->publishes([
-            $sourcePath => $viewPath
+            $sourcePath => $viewPath,
         ]);
 
         $this->loadViewsFrom([$viewPath, $sourcePath], 'page');
@@ -90,7 +90,6 @@ class PageServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array();
+        return [];
     }
-
 }

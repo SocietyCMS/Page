@@ -2,9 +2,9 @@
 
 return [
     'title' => [
-        'page' => 'Page',
-        'pages' => 'Pages',
-        'all pages' => 'All Pages'
+        'page'      => 'Page',
+        'pages'     => 'Pages',
+        'all pages' => 'All Pages',
     ],
     'button' => [
         'create page' => 'Create a page',
@@ -16,16 +16,16 @@ return [
         'status'    => 'Status',
     ],
     'form' => [
-        'title' => 'Title',
+        'title'   => 'Title',
         'content' => 'Content',
     ],
     'validation' => [
         'attributes' => [
             'title' => 'title',
-            'body' => 'body',
+            'body'  => 'body',
         ],
     ],
     'messages' => [
-        'no pages' => 'No pages yet. You can add one with the button above.'
-    ]
+        'no pages' => 'No pages yet. You can add one with the button above.',
+    ],
 ];
