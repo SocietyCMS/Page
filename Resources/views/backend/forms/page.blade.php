@@ -20,13 +20,3 @@
         <label>@lang('core::elements.change state.publish')</label>
     </div>
 </div>
-
-@section('javascript')
-    <script>
-        var editor = new MediumEditor('.editable', {
-            placeholder: {
-                text: ''
-            }
-        });
-    </script>
-@endsection

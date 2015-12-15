@@ -30,7 +30,7 @@ class Page extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'slug', 'body', 'published', 'user_id'];
+    protected $fillable = ['title', 'slug', 'body', 'published', 'create_menu_entry', 'user_id'];
 
     /**
      * Views for the Dashboard timeline.

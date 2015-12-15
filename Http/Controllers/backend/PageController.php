@@ -38,6 +38,7 @@ class PageController extends AdminBaseController
             'user_id'   => Sentinel::getUser()->id,
             'slug'      => $this->page->getSlugForTitle($request->title),
             'published' => (bool) $request->published,
+            'create_menu_entry' => (bool) $request->create_menu_entry,
             ]);
 
         $page = $this->page->create($input);
@@ -58,6 +59,7 @@ class PageController extends AdminBaseController
         $input = array_merge($request->input(), [
             'user_id'   => Sentinel::getUser()->id,
             'published' => (bool) $request->published,
+            'create_menu_entry' => (bool) $request->create_menu_entry,
         ]);
 
         $this->page->update($input, $this->page->findBySlug($slug)->id);

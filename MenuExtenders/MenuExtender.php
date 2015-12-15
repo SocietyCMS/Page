@@ -36,7 +36,7 @@ class MenuExtender implements \Modules\Menu\Repositories\MenuExtender
      */
     public function extendWith(MenuRepository $menuRepository)
     {
-        $publishedPages = $this->page->allPublishedPages();
+        $publishedPages = $this->page->allWhereToCreateMenuEntry();
 
         foreach ($publishedPages as $page) {
             $menuRepository->mainMenu()->route('page', $page->title, [$page->slug]);

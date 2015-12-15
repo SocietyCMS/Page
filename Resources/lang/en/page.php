@@ -19,6 +19,10 @@ return [
         'title'   => 'Title',
         'content' => 'Content',
     ],
+    'state' => [
+        'create_menu_entry'     => 'Auto create menu entry',
+        'menu entry disabled' => 'Menu entry disabled'
+    ],
     'validation' => [
         'attributes' => [
             'title' => 'title',

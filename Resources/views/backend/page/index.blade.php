@@ -35,6 +35,9 @@
 					@else
 						<span class="ui yellow label">@lang('core::elements.state.draft')</span>
 					@endif
+					@unless($page->create_menu_entry)
+						<span class="ui label">@lang('page::page.state.menu entry disabled')</span>
+					@endunless
 				</td>
 				<td>
 					<div class="ui icon top right pointing dropdown button">
