@@ -41,20 +41,6 @@ class PublicController extends PublicBaseController
     }
 
     /**
-     * @return \Illuminate\View\View
-     */
-    public function homepage()
-    {
-        $page = $this->page->findHomepage();
-
-        $this->throw404IfNotFound($page);
-
-        $template = $this->getTemplateForPage($page);
-
-        return view($template, compact('page'));
-    }
-
-    /**
      * Return the template for the given page
      * or the default template if none found.
      *
