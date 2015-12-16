@@ -67,4 +67,13 @@ class PageController extends AdminBaseController
         return redirect()->route('backend::page.pages.index')
             ->with('success', 'Your page has been updated successfully.');
     }
+
+    public function destroy($slug)
+    {
+        $page = $this->page->findBySlug($slug);
+        $page->delete();
+
+        return redirect()->route('backend::page.pages.index')
+            ->with('success', 'Your page has been deleted.');
+    }
 }

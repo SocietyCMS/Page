@@ -35,18 +35,19 @@
 					@else
 						<span class="ui yellow label">@lang('core::elements.state.draft')</span>
 					@endif
-					@unless($page->create_menu_entry)
-						<span class="ui label">@lang('page::page.state.menu entry disabled')</span>
-					@endunless
 				</td>
 				<td>
-					<div class="ui icon top right pointing dropdown button">
-						<i class="wrench icon"></i>
-						<div class="menu">
-							<a class="item" href="{{route('backend::page.pages.edit', $page->slug)}}">@lang('core::elements.button.edit')</a>
-							<a class="disabled item">@lang('core::elements.button.delete')</a>
+					<form class="ui form" role="form" method="POST" action="{{route('backend::page.pages.destroy', $page->slug)}}" >
+						<input type="hidden" name="_method" value="DELETE">
+						{!! csrf_field() !!}
+						<div class="ui icon top right pointing dropdown button">
+							<i class="wrench icon"></i>
+							<div class="menu">
+								<a class="item" href="{{route('backend::page.pages.edit', $page->slug)}}">@lang('core::elements.button.edit')</a>
+								<button class="item">@lang('core::elements.button.delete')</button>
+							</div>
 						</div>
-					</div>
+					</form>
 				</td>
 			</tr>
 		@endforeach
