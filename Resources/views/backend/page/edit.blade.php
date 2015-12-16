@@ -44,12 +44,6 @@
 
 @section('javascript')
     <script>
-        var editor = new MediumEditor('.editable', {
-            placeholder: {
-                text: ''
-            }
-        });
-
         $('.ui.detail.accordion')
                 .accordion();
     </script>
