@@ -53,7 +53,7 @@
 		@endforeach
 		@if($pages->count() == 0)
 			<tr class="center aligned">
-				<td colspan = "5">@lang('page::page.messages.no articles')</td>
+				<td colspan = "5">@lang('page::page.messages.no pages')</td>
 			</tr>
 		@endif
 		</tbody>
