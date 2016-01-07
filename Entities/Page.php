@@ -40,6 +40,13 @@ class Page extends Model
     protected static $templatePath = 'page::backend.activities';
 
     /**
+     * The relations to eager load on every query.
+     *
+     * @var array
+     */
+    protected $with = ['user'];
+
+    /**
      * USer relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
