@@ -2,7 +2,6 @@
 
 namespace Modules\Page\Http\Controllers\backend;
 
-use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Modules\Core\Http\Controllers\AdminBaseController;
 use Modules\Page\Http\Requests\PageRequest;
 use Modules\Page\Repositories\PageRepository;
@@ -35,7 +34,7 @@ class PageController extends AdminBaseController
     public function store(PageRequest $request)
     {
         $input = array_merge($request->input(), [
-            'user_id'   => Sentinel::getUser()->id,
+            'user_id'   => $this->auth->user()->id,
             'slug'      => $this->page->getSlugForTitle($request->title),
             'published' => (bool) $request->published,
             'create_menu_entry' => (bool) $request->create_menu_entry,
@@ -57,7 +56,7 @@ class PageController extends AdminBaseController
     public function update(PageRequest $request, $slug)
     {
         $input = array_merge($request->input(), [
-            'user_id'   => Sentinel::getUser()->id,
+            'user_id'   => $this->auth->user()->id,
             'published' => (bool) $request->published,
             'create_menu_entry' => (bool) $request->create_menu_entry,
         ]);
