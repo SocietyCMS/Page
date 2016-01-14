@@ -7,9 +7,9 @@ class RegisterDefaultPermissions
 
     public $defaultPermissions = [
 
-        'blog.manage-page' => [
+        'manage-page' => [
             'display_name' => 'Manage all Pages',
-            'description' => ''
+            'description' => 'Users with this Permission can create, edit and delete all Pages.'
         ],
 
     ];
