@@ -39,7 +39,7 @@ class SidebarExtender implements \Maatwebsite\Sidebar\SidebarExtender
                 $item->icon('fa fa-file');
                 $item->route('backend::page.pages.index');
                 $item->authorize(
-                    $this->auth->hasAccess('page.pages.index')
+                    $this->auth->can('page::manage-page')
                 );
             });
 
