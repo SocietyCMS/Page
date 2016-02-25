@@ -15,7 +15,7 @@ $factory->define(\Modules\Page\Entities\Page::class, function (Faker\Generator $
     return [
         'title' => $title = $faker->words(3, true),
         'slug' => Str::slug($title),
-        'body' => $faker->paragraphs(50, true),
+        'body' => nl2br($faker->paragraphs(50, true)),
         'published' => $faker->boolean(80),
         'create_menu_entry' => $faker->boolean(80),
         'user_id' => $faker->randomElement(\Modules\User\Entities\Entrust\EloquentUser::all()->lists('id')->toArray()),
