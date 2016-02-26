@@ -13,9 +13,9 @@ use Illuminate\Support\Str;
 
 $factory->define(\Modules\Page\Entities\Page::class, function (Faker\Generator $faker) {
     return [
-        'title' => $title = $faker->words(3, true),
+        'title' => $title = ucfirst($faker->word),
         'slug' => Str::slug($title),
-        'body' => nl2br($faker->paragraphs(50, true)),
+        'body' => nl2br($faker->text($maxNbChars = 5000)),
         'published' => $faker->boolean(80),
         'create_menu_entry' => $faker->boolean(80),
         'user_id' => $faker->randomElement(\Modules\User\Entities\Entrust\EloquentUser::all()->lists('id')->toArray()),
