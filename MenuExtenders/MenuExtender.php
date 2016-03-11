@@ -3,10 +3,10 @@
 namespace Modules\Page\MenuExtenders;
 
 use Modules\Core\Contracts\Authentication;
-use Modules\Menu\Repositories\Menu\MenuRepository;
+use Modules\Menu\Repositories\BaseMenuExtender;
 use Modules\Page\Repositories\PageRepository;
 
-class MenuExtender implements \Modules\Menu\Repositories\MenuExtender
+class MenuExtender extends BaseMenuExtender
 {
     /**
      * @var Authentication
@@ -30,8 +30,8 @@ class MenuExtender implements \Modules\Menu\Repositories\MenuExtender
     }
 
     /**
-     * @param MenuRepository $menuRepository
      * @return mixed
+     * @internal param MenuRepository $menuRepository
      */
     public function contentItems()
     {
@@ -39,8 +39,8 @@ class MenuExtender implements \Modules\Menu\Repositories\MenuExtender
     }
 
     /**
-     * @param MenuRepository $menuRepository
      * @return mixed
+     * @internal param MenuRepository $menuRepository
      */
     public function staticLinks()
     {

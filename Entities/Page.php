@@ -4,14 +4,14 @@ namespace Modules\Page\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Laracasts\Presenter\PresentableTrait;
-use Modules\Menu\Repositories\MenuItem;
+use Modules\Menu\Repositories\ProvidesMenuItem;
 use Modules\User\Traits\Activity\RecordsActivity;
 
-class Page extends Model implements MenuItem
+class Page extends Model
 {
     use RecordsActivity;
     use PresentableTrait;
-
+    use ProvidesMenuItem;
     /**
      * Presenter Class.
      *
@@ -60,16 +60,9 @@ class Page extends Model implements MenuItem
     /**
      * @return mixed
      */
-    public function getNameForMenuItem()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getRouteForMenuItem()
     {
         return route('page', ['uri' => $this->slug]);
     }
+
 }
