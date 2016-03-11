@@ -4,9 +4,10 @@ namespace Modules\Page\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Laracasts\Presenter\PresentableTrait;
+use Modules\Menu\Repositories\MenuItem;
 use Modules\User\Traits\Activity\RecordsActivity;
 
-class Page extends Model
+class Page extends Model implements MenuItem
 {
     use RecordsActivity;
     use PresentableTrait;
@@ -54,5 +55,21 @@ class Page extends Model
     public function user()
     {
         return $this->belongsTo("Modules\\User\\Entities\\Entrust\\EloquentUser", 'user_id');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNameForMenuItem()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRouteForMenuItem()
+    {
+        return route('page', ['uri' => $this->slug]);
     }
 }

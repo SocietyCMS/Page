@@ -31,17 +31,19 @@ class MenuExtender implements \Modules\Menu\Repositories\MenuExtender
 
     /**
      * @param MenuRepository $menuRepository
-     *
-     * @return MenuRepository
+     * @return mixed
      */
-    public function extendWith(MenuRepository $menuRepository)
+    public function contentItems()
     {
-        $publishedPages = $this->page->allWhereToCreateMenuEntry();
+        return $publishedPages = $this->page->allPublishedPages();
+    }
 
-        foreach ($publishedPages as $page) {
-            $menuRepository->mainMenu()->route('page', $page->title, [$page->slug]);
-        }
-
-        return $menuRepository;
+    /**
+     * @param MenuRepository $menuRepository
+     * @return mixed
+     */
+    public function staticLinks()
+    {
+        // TODO: Implement staticLinks() method.
     }
 }
