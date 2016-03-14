@@ -37,11 +37,9 @@ class PageController extends AdminBaseController
             'user_id'   => $this->auth->user()->id,
             'slug'      => $this->page->getSlugForTitle($request->title),
             'published' => (bool) $request->published,
-            'create_menu_entry' => (bool) $request->create_menu_entry,
             ]);
 
         $page = $this->page->create($input);
-        // write flash message and redirect
         return redirect()->route('backend::page.pages.index')
             ->with('success', 'Your page has been created successfully.');
     }
@@ -58,7 +56,6 @@ class PageController extends AdminBaseController
         $input = array_merge($request->input(), [
             'user_id'   => $this->auth->user()->id,
             'published' => (bool) $request->published,
-            'create_menu_entry' => (bool) $request->create_menu_entry,
         ]);
 
         $this->page->update($input, $this->page->findBySlug($slug)->id);

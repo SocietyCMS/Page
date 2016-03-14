@@ -18,7 +18,6 @@ class CreatePageTable extends Migration
             $table->string('slug')->unique()->index();
             $table->text('body');
             $table->boolean('published')->default(0);
-            $table->boolean('create_menu_entry')->default(1);
             $table->string('template');
             $table->integer('user_id');
             $table->timestamps();
