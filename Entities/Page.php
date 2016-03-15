@@ -4,13 +4,14 @@ namespace Modules\Page\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Laracasts\Presenter\PresentableTrait;
+use Modules\Menu\Repositories\ProvidesMenuItem;
 use Modules\User\Traits\Activity\RecordsActivity;
 
 class Page extends Model
 {
     use RecordsActivity;
     use PresentableTrait;
-
+    use ProvidesMenuItem;
     /**
      * Presenter Class.
      *
@@ -30,7 +31,7 @@ class Page extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'slug', 'body', 'published', 'create_menu_entry', 'user_id'];
+    protected $fillable = ['title', 'slug', 'body', 'published', 'user_id'];
 
     /**
      * Views for the Dashboard timeline.
@@ -55,4 +56,13 @@ class Page extends Model
     {
         return $this->belongsTo("Modules\\User\\Entities\\Entrust\\EloquentUser", 'user_id');
     }
+
+    /**
+     * @return mixed
+     */
+    public function getRouteForMenuItem()
+    {
+        return route('page', ['uri' => $this->slug]);
+    }
+
 }

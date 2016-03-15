@@ -3,10 +3,10 @@
 namespace Modules\Page\MenuExtenders;
 
 use Modules\Core\Contracts\Authentication;
-use Modules\Menu\Repositories\Menu\MenuRepository;
+use Modules\Menu\Repositories\BaseMenuExtender;
 use Modules\Page\Repositories\PageRepository;
 
-class MenuExtender implements \Modules\Menu\Repositories\MenuExtender
+class MenuExtender extends BaseMenuExtender
 {
     /**
      * @var Authentication
@@ -30,18 +30,20 @@ class MenuExtender implements \Modules\Menu\Repositories\MenuExtender
     }
 
     /**
-     * @param MenuRepository $menuRepository
-     *
-     * @return MenuRepository
+     * @return mixed
+     * @internal param MenuRepository $menuRepository
      */
-    public function extendWith(MenuRepository $menuRepository)
+    public function contentItems()
     {
-        $publishedPages = $this->page->allWhereToCreateMenuEntry();
+        return $publishedPages = $this->page->allPublishedPages();
+    }
 
-        foreach ($publishedPages as $page) {
-            $menuRepository->mainMenu()->route('page', $page->title, [$page->slug]);
-        }
-
-        return $menuRepository;
+    /**
+     * @return mixed
+     * @internal param MenuRepository $menuRepository
+     */
+    public function staticLinks()
+    {
+        // TODO: Implement staticLinks() method.
     }
 }
