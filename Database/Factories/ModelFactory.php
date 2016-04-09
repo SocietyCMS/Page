@@ -15,10 +15,7 @@ $factory->define(\Modules\Page\Entities\Page::class, function (Faker\Generator $
     return [
         'title' => $title = ucfirst($faker->sentence(3, $variableNbWords = true)),
         'slug'  => Str::slug($title),
-        'body'  => implode(' ', array_map(function ($value) {
-            return "<p>{$value}</p>";
-        }, $faker->paragraphs(15, false))),
-
+        'body'  => $faker->paragraphs($faker->numberBetween(8, 30) , true),
         'published'  => $faker->boolean(80),
         'user_id'    => $faker->randomElement(\Modules\User\Entities\Entrust\EloquentUser::all()->lists('id')->toArray()),
         'created_at' => $start = $faker->dateTimeThisYear,

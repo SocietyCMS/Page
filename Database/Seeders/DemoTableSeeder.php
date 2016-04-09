@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Modules\Core\Traits\Factory\useFactories;
 
-class PageTableSeeder extends Seeder
+class DemoTableSeeder extends Seeder
 {
     use useFactories;
     /**
