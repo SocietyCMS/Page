@@ -3,10 +3,17 @@
 namespace Modules\Page\Presenters;
 
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Laracasts\Presenter\Presenter;
 
 class PagePresenter extends Presenter
 {
+    public function summary()
+    {
+        $html = new \Html2Text\Html2Text($this->body);
+        return Str::words($html->getText(), 50);
+    }
+
     /**
      * Format created_at.
      *
