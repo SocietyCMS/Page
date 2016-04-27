@@ -9,9 +9,10 @@
 
 @section('content')
 
-	<div class="ui blue segment">
-		<a href="{{route('backend::page.pages.create')}}" class="fluid ui blue button">{{trans('core::elements.action.create resource', ['name'=>trans('page::page.title.page')])}}</a>
-	</div>
+	<a class="ui primary button" href="{{route('backend::page.pages.create')}}" >
+		<i class="file outline icon"></i>
+		{{trans('core::elements.action.create resource', ['name'=>trans('page::page.title.page')])}}
+	</a>
 
 	<table class="ui selectable very compact celled table">
 		<thead>
