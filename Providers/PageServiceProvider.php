@@ -20,58 +20,6 @@ class PageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->registerConfig();
-        $this->registerTranslations();
-        $this->registerViews();
-    }
-
-    /**
-     * Register config.
-     *
-     * @return void
-     */
-    protected function registerConfig()
-    {
-        $this->publishes([
-            __DIR__.'/../Config/config.php' => config_path('page.php'),
-        ]);
-        $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'page'
-        );
-    }
-
-    /**
-     * Register translations.
-     *
-     * @return void
-     */
-    public function registerTranslations()
-    {
-        $langPath = base_path('resources/lang/modules/page');
-
-        if (is_dir($langPath)) {
-            $this->loadTranslationsFrom($langPath, 'page');
-        } else {
-            $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'page');
-        }
-    }
-
-    /**
-     * Register views.
-     *
-     * @return void
-     */
-    public function registerViews()
-    {
-        $viewPath = base_path('resources/views/modules/page');
-
-        $sourcePath = __DIR__.'/../Resources/views';
-
-        $this->publishes([
-            $sourcePath => $viewPath,
-        ]);
-
-        $this->loadViewsFrom([$viewPath, $sourcePath], 'page');
     }
 
     /**
