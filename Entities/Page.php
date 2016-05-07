@@ -5,7 +5,7 @@ namespace Modules\Page\Entities;
 use Illuminate\Database\Eloquent\Model;
 use Laracasts\Presenter\PresentableTrait;
 use Modules\Menu\Repositories\ProvidesMenuItem;
-use Modules\User\Traits\Activity\RecordsActivity;
+use Modules\Core\Traits\Activity\RecordsActivity;
 
 class Page extends Model
 {
