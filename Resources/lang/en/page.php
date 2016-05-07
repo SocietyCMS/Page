@@ -6,9 +6,6 @@ return [
         'pages'     => 'Pages',
         'all pages' => 'All Pages',
     ],
-    'button' => [
-        'create page' => 'Create a page',
-    ],
     'table' => [
         'title'     => 'Title',
         'author'    => 'Author',
@@ -18,10 +15,6 @@ return [
     'form' => [
         'title'   => 'Title',
         'content' => 'Content',
-    ],
-    'state' => [
-        'create_menu_entry'     => 'Auto create menu entry',
-        'menu entry disabled' => 'Menu entry disabled'
     ],
     'validation' => [
         'attributes' => [
