@@ -6,10 +6,10 @@ class RegisterDefaultPermissions
 {
 
     public $defaultPermissions = [
-
+        
         'manage-page' => [
-            'display_name' => 'Manage all Pages',
-            'description' => 'Users with this Permission can create, edit and delete all Pages.'
+            'display_name' => 'page::module-permissions.manage-page.display_name',
+            'description'  => 'page::module-permissions.manage-page.description',
         ],
 
     ];
