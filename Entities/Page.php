@@ -4,6 +4,7 @@ namespace Modules\Page\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Laracasts\Presenter\PresentableTrait;
+use Modules\Core\Traits\Entities\RelatesToUser;
 use Modules\Menu\Repositories\ProvidesMenuItem;
 use Modules\Core\Traits\Activity\RecordsActivity;
 
@@ -12,6 +13,9 @@ class Page extends Model
     use RecordsActivity;
     use PresentableTrait;
     use ProvidesMenuItem;
+
+    use RelatesToUser;
+
     /**
      * Presenter Class.
      *
@@ -46,17 +50,7 @@ class Page extends Model
      * @var array
      */
     protected $with = ['user'];
-
-    /**
-     * USer relation.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function user()
-    {
-        return $this->belongsTo("Modules\\User\\Entities\\Entrust\\EloquentUser", 'user_id');
-    }
-
+    
     /**
      * @return mixed
      */
