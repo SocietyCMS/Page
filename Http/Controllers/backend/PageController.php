@@ -40,8 +40,10 @@ class PageController extends AdminBaseController
             ]);
 
         $page = $this->page->create($input);
-        return redirect()->route('backend::page.pages.index')
-            ->with('success', 'Your page has been created successfully.');
+
+        flash(trans('core::messages.resource.resource created', ['name' => trans('page::page.title.page')]));
+
+        return redirect()->route('backend::page.pages.index');
     }
 
     public function edit($slug)
@@ -59,9 +61,10 @@ class PageController extends AdminBaseController
         ]);
 
         $this->page->update($input, $this->page->findBySlug($slug)->id);
-        // write flash message and redirect
-        return redirect()->route('backend::page.pages.index')
-            ->with('success', 'Your page has been updated successfully.');
+
+        flash(trans('core::messages.resource.resource updated', ['name' => trans('page::page.title.page')]));
+
+        return redirect()->route('backend::page.pages.index');
     }
 
     public function destroy($slug)
@@ -69,7 +72,8 @@ class PageController extends AdminBaseController
         $page = $this->page->findBySlug($slug);
         $page->delete();
 
-        return redirect()->route('backend::page.pages.index')
-            ->with('success', 'Your page has been deleted.');
+        flash(trans('core::messages.resource.resource deleted', ['name' => trans('page::page.title.page')]));
+
+        return redirect()->route('backend::page.pages.index');
     }
 }
