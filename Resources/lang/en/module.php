@@ -2,7 +2,7 @@
 
 return [
 
-    'title'       => 'Pages',
+    'title'       => 'Page',
     'description' => 'Managing Pages',
 
 ];
