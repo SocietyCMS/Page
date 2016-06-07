@@ -45,6 +45,13 @@ class Page extends Model
     protected static $templatePath = 'page::backend.activities';
 
     /**
+     * Privacy setting for the dashboard. Pages are public.
+     *
+     * @var string
+     */
+    protected static $activityPrivacy = 'public';
+    
+    /**
      * The relations to eager load on every query.
      *
      * @var array
